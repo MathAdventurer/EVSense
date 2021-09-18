@@ -1,16 +1,16 @@
-# EVsense
+# EVSense
 
 The repository of *EVsense: A Non-Intrusive Approach to Robust and Scalable EV Charging Detection*
 
 > The author's GitHub Homepage: (https://github.com/MathAdventurer)
 
-## What is EVsense
+## What is EVSense
 
  A DNN model which can detection the household EV charging event from  aggregation power load. It's belongs to the single source blind disaggregation and the NILM(No-intrusive Load Monitoring.)
 
 ## What dose this project contain
 
-  - EVsense, a DNN model implemented in Pytorch, Python3
+  - EVSense, a DNN model implemented in Pytorch, Python3
   - Data Loader, Data precessing, Data Query, etc. for the Pecanstreet Datasets
   - Model pruning and compression, transfer learning for the proposed EVsense, which have been validation on both sever, PC and the end device: Raspberry Pi 3B+
   - Some revised version loss funciton like Dice-loss, Forcal loss, etc.
