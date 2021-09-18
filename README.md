@@ -40,4 +40,4 @@ The repository of $EVsense: A Non-Intrusive Approach to Robust and Scalable EV C
 ---
 
 #### Contact me：
-- Email: [@Xudong Wang](xudongwang@link.cuhk.edu.cn)
+- Email: [Xudong Wang] (xudongwang@link.cuhk.edu.cn)
