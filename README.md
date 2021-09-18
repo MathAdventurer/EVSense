@@ -7,7 +7,7 @@ The repository of $EVsense: A Non-Intrusive Approach to Robust and Scalable EV C
 
  A DNN model which can detection the household EV charging event from  aggregation power load. It's belongs to the single source blind disaggregation and the NILM(No-intrusive Load Monitoring.)
 
-## What are this prject contain
+## What dose this project contain
 
   - EVsense, a DNN model implemented in Pytorch, Python3
   - Data Loader, Data precessing, Data Query, etc. for the Pecanstreet Datasets
