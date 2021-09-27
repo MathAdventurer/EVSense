@@ -19,7 +19,7 @@ The repository of *EVSense: A Robust and Scalable Approach to Non-Intrusive EV C
 
 ## Datasets
 
- Since the Pecan Street datasets are not open sourse, due to the term of usesage, this github only provides two residents cleaned datasets in pickle formula, which is friendly to try the codes. You can buy or apply the Pecan Street datasets from here: (https://www.pecanstreet.org/dataport/).
+ Since the Pecan Street datasets are not open sourse, due to the term of usesage, this github only provides cleaned data of two residents' in pickle formula. You can buy or apply the Pecan Street datasets from here: (https://www.pecanstreet.org/dataport/).
  
  Once you have access to the Pecan Street Dataport, you can easy obtain the data. This Github project has provided a complete solution, including data query from SQLlite3 file, data clean and saving, and so on.
 
