@@ -26,9 +26,9 @@ The repository of *EVSense: A Robust and Scalable Approach to Non-Intrusive EV C
 ## Requirements
 
   - Python 3.5+
-  - Pytorch 1.4+ (Here the pytorch 1.8 use on Raspberry Pi 4B, you can following this link to compile the Pytorch, torchvision version you wanna use on Raspberry Pi:   (https://sites.google.com/view/steam-for-vision/raspberry-pi))
-  - hmmlearn pakage if you wanna run the implemented FHMM
-  - MATLAB after version 2009 for the IECON benchmark: (https://www.mathworks.com/matlabcentral/fileexchange/47474-energy-disaggregation-algorithm-for-electric-vehicle-charging-load).
+  - Pytorch 1.4+ (Pytorch 1.8 was used on Raspberry Pi 4B. You can refer to [this link](https://sites.google.com/view/steam-for-vision/raspberry-pi) to compile the Pytorch, torchvision version on Raspberry Pi.)
+  - *hmmlearn* package for the learning-based (FHMM) benchmark.
+  - MATLAB code (with version after 2009) for the rule-based benchmark: (https://www.mathworks.com/matlabcentral/fileexchange/47474-energy-disaggregation-algorithm-for-electric-vehicle-charging-load).
   - If you have no GPUs, it may takes a long time to directly train the uncompressed model.
 
 ## Installation and Usage
