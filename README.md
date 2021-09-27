@@ -6,7 +6,7 @@ The repository of *EVSense: A Robust and Scalable Approach to Non-Intrusive EV C
 
 ## What is EVSense
 
- A DNN model which can detection the household EV charging events from the aggregation load curve. It's belongs to the single source blind disaggregation and the NILM (Non-Intrusive Load Monitoring).
+ A DNN model designed for household EV charging detection only using the aggregation load curve (so called "non-intrusive EV charging detection").
 
 ## What dose this project contain
 
