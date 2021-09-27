@@ -1,35 +1,35 @@
 # EVSense
 
-The repository of *EVSense: A Non-Intrusive Approach to Robust and Scalable EV Charging Detection*
+The repository of *EVSense: A Robust and Scalable Approach to Non-Intrusive EV Charging Detection*
 
-> The author's GitHub Homepage: (https://github.com/MathAdventurer)
+> Authors: Xudong Wang, Guoming Tang, TBD
 
 ## What is EVSense
 
- A DNN model which can detection the household EV charging event from  aggregation power load. It's belongs to the single source blind disaggregation and the NILM(No-intrusive Load Monitoring.)
+ A DNN model which can detection the household EV charging events from the aggregation load curve. It's belongs to the single source blind disaggregation and the NILM (Non-Intrusive Load Monitoring).
 
 ## What dose this project contain
 
   - EVSense, a DNN model implemented in Pytorch, Python3
-  - Data Loader, Data precessing, Data Query, etc. for the Pecanstreet Datasets
+  - Data loader, data precessing, data query, etc. for Pecan Street dataset
   - Model pruning and compression, transfer learning for the proposed EVsense, which have been validation on both sever, PC and the end device: Raspberry Pi 3B+
   - Some revised version loss funciton like Dice-loss, Forcal loss, etc.
-  - Benchmark model implemented like FHMM for time series event dection, Codes for test and benchmark the dataset for MATLAB code
-  - EV chargin session analysis and visualization
+  - Implemented benchmarks, codes and datasets
+  - EV charging session analysis and visualization
 
 ## Datasets
 
- Since the Pecanstreet is not the open sourse datasets, due to the term of usesage, this github only provide two residents cleaned datasets in pickle formula, which is frendly for u to try these codes. And if you have an interest for Pecanstreet data, you can buy or apply from here: (https://www.pecanstreet.org/dataport/).
+ Since the Pecan Street datasets are not open sourse, due to the term of usesage, this github only provides two residents cleaned datasets in pickle formula, which is friendly to try the codes. You can buy or apply the Pecan Street datasets from here: (https://www.pecanstreet.org/dataport/).
  
- Once you have a access for the Pecanstreet Dataport, you can easy for using these data since this Github project have done an complete approach for Data query from SQLlite3 file, Data Clean and saving, and so on.
+ Once you have access to the Pecan Street Dataport, you can easy obtain the data. This Github project has provided a complete solution, including data query from SQLlite3 file, data clean and saving, and so on.
 
 ## Requirements
 
-  - Python 3.5+, No need for nilmtk
-  - Pytorch 1.4+ (Here the pytorch 1.8 use on Raspberry Pi 3B+, you can following this link for Compile the Pytorch, torchvision version you wanna use on Raspberry Pi:   (https://sites.google.com/view/steam-for-vision/raspberry-pi))
+  - Python 3.5+
+  - Pytorch 1.4+ (Here the pytorch 1.8 use on Raspberry Pi 4B, you can following this link to compile the Pytorch, torchvision version you wanna use on Raspberry Pi:   (https://sites.google.com/view/steam-for-vision/raspberry-pi))
   - hmmlearn pakage if you wanna run the implemented FHMM
   - MATLAB after version 2009 for the IECON benchmark: (https://www.mathworks.com/matlabcentral/fileexchange/47474-energy-disaggregation-algorithm-for-electric-vehicle-charging-load).
-  - If you not have GPUs, directly training the uncompressed model may be a little bit time comsumming.
+  - If you have no GPUs, it may takes a long time to directly train the uncompressed model.
 
 ## Installation and Usage
 
@@ -41,5 +41,5 @@ The repository of *EVSense: A Non-Intrusive Approach to Robust and Scalable EV C
 
 ---
 
-#### Contact me：
-- Email: [Xudong Wang] (xudongwang@link.cuhk.edu.cn)
+#### Contact:
+- Emails: [Xudong Wang] (xudongwang@link.cuhk.edu.cn), [Guoming Tang] (tanggm@pcl.ac.cn)
