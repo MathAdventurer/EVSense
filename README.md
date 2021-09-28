@@ -12,7 +12,7 @@ The repository of EVSense: a robust and scalable approach to non-intrusive EV ch
 
   - EVSense, a DNN model implemented in Pytorch, Python3
   - Data loader, data processing, data query, etc. for Pecan Street dataset
-  - Model pruning and compression, transfer learning for the proposed EVsense, which have been validation on both sever, PC and the end device: Raspberry Pi 3B+
+  - Model pruning and compression, transfer learning for the proposed EVsense, which have been validation on both sever, PC and the end device: Raspberry Pi 4B
   - Some revised version loss function like Dice-loss, Forcal loss, etc.
   - Implemented benchmarks, codes and datasets
   - EV charging session analysis and visualization
