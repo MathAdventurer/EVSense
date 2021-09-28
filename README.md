@@ -2,7 +2,7 @@
 
 The repository of EVSense: a robust and scalable approach to non-intrusive EV charging detection.
 
-> Authors: Xudong Wang, Guoming Tang
+> by Xudong Wang, Guoming Tang
 
 ## What is EVSense
 
