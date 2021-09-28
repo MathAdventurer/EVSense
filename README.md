@@ -6,7 +6,7 @@ The repository of *EVSense: A Robust and Scalable Approach to Non-Intrusive EV C
 
 ## What is EVSense
 
- A DNN model designed for household EV charging detection only using the aggregated load curve (so called "non-intrusive EV charging detection").
+ A DNN model designed for household EV charging detection only using the aggregated load curve, so called **non-intrusive EV charging detection**.
 
 ## What dose this project contain
 
@@ -37,7 +37,7 @@ The repository of *EVSense: A Robust and Scalable Approach to Non-Intrusive EV C
 
 ## License
 
-  MIT license.
+  MIT License.
 
 ---
 
