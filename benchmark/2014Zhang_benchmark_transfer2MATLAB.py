@@ -11,8 +11,8 @@ from ..utils import calculate_metrics, out_filter
 with open('../pickle_data/3000.pkl', 'rb') as f:
     dt_3000_1min = pickle.load(f)
 
-useto2014 = dt_3000_1min.loc['2018-07-01':'2018-07-31']['aggregate'].values[:1440*25] * 1000 * 1000
-useto2014_label = dt_3000_1min.loc['2018-07-01':'2018-07-31']['label'].values[:1440*25] * 1000
+useto2014 = dt_3000_1min.loc['2018-07-01':'2018-07-31']['aggregate'].values[:1440*25] * 1000
+useto2014_label = dt_3000_1min.loc['2018-07-01':'2018-07-31']['label'].values[:1440*25]
 saved2014 = np.zeros((1440, 25))
 useto2014[np.isnan(useto2014)] = 0
 useto2014_label[np.isnan(useto2014_label)] = 0
