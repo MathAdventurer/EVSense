@@ -8,6 +8,7 @@ import numpy as np
 import torch
 from sklearn.metrics import accuracy_score, recall_score, precision_score, f1_score
 import copy
+import matplotlib.pyplot as plt
 # fix random state
 def setup_seed(seed):
     torch.manual_seed(seed)
