@@ -11,15 +11,15 @@ The repository of *EVSense: A Robust and Scalable Approach to Non-Intrusive EV C
 ## What dose this project contain
 
   - EVSense, a DNN model implemented in Pytorch, Python3
-  - Data loader, data precessing, data query, etc. for Pecan Street dataset
+  - Data loader, data processing, data query, etc. for Pecan Street dataset
   - Model pruning and compression, transfer learning for the proposed EVsense, which have been validation on both sever, PC and the end device: Raspberry Pi 3B+
-  - Some revised version loss funciton like Dice-loss, Forcal loss, etc.
+  - Some revised version loss function like Dice-loss, Forcal loss, etc.
   - Implemented benchmarks, codes and datasets
   - EV charging session analysis and visualization
 
 ## Datasets
 
- Since the Pecan Street datasets are not open sourse, due to the term of usesage, this github only provides cleaned data of two residents' in pickle formula. You can buy or apply the Pecan Street datasets from [this link](https://www.pecanstreet.org/dataport/).
+ Since the Pecan Street datasets are not open source, due to the term of usage, this Github repository provides cleaned data of only two residents in pickle formula. You can buy or apply the Pecan Street datasets from [this link](https://www.pecanstreet.org/dataport/).
  
  Once having right to access the Pecan Street Dataport, you can easily download the dataset. This Github project also provides a complete solution to various data manipulations, including data query from SQLlite3 file, data cleaning and saving, and so on.
 
@@ -33,7 +33,7 @@ The repository of *EVSense: A Robust and Scalable Approach to Non-Intrusive EV C
 
 ## Installation and Usage
 
-  Using the git clone command in your termainal.
+  Using `git clone` command in your terminal.
 
 ## License
 
