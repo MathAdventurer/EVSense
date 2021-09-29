@@ -34,6 +34,56 @@ The repository of EVSense: a robust and scalable approach to non-intrusive EV ch
 ## Installation and Usage
 
   Using `git clone` command in your terminal.
+  
+  
+## Project file structure
+  EVSense/
+  ├── LICENSE
+  ├── README.md
+  ├── benchmark
+  │   ├── 2014Zhang_benchmark_transfer2MATLAB.py
+  │   └── FHMM_benchmark.py
+  ├── checkpoint
+  ├── data_processing.py
+  ├── session_analysis.py
+  ├── datasets
+  │   ├── austin
+  │   ├── california
+  │   └── newyork
+  │   ├── metadata
+  │   │   ├── California_EV_real_exist_data_info.csv
+  │   │   ├── California_NoEV_real_exist_data_info.csv
+  │   │   ├── California_total_real_exist_data_info.csv
+  │   │   ├── Newyork_EV_real_exist_data_info.csv
+  │   │   ├── Newyork_NoEV_real_exist_data_info.csv
+  │   │   ├── Newyork_total_real_exist_data_info.csv
+  │   │   ├── Texas_EV_real_exist_data_info.csv
+  │   │   ├── Texas_NoEV_real_exist_data_info.csv
+  │   │   ├── Texas_total_real_exist_data_info.csv
+  │   │   ├── real_resident_list_1min.pkl
+  │   │   └── resident_list_1min.pkl
+  ├── model
+  │   ├── loss.py
+  │   ├── metrics.py
+  │   └── models.py
+  ├── model_pruning&compression
+  │   ├── Edge_Running
+  │   │   ├── Edge_Running&Test.py
+  │   │   ├── test_data_.pkl
+  │   │   └── test_label_.pkl
+  │   └── model_pruning&compression.py
+  ├── model_transfer
+  │   ├── transfer_from_661.py
+  │   └── transfer_sampling_rate.py
+  ├── experiment.py
+  ├── experiment_record
+  ├── global-state_from661.pth
+  ├── pickle_data
+  │   ├── 3000.pkl
+  │   ├── 3000_session.pkl
+  │   ├── 661.pkl
+  │   └── 661_session.pkl
+  └── utils.py
 
 ## License
 
