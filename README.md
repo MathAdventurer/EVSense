@@ -37,6 +37,7 @@ The repository of EVSense: a robust and scalable approach to non-intrusive EV ch
   
   
 ## Project file structure
+```bash
   EVSense/
   ├── LICENSE
   ├── README.md
@@ -84,7 +85,7 @@ The repository of EVSense: a robust and scalable approach to non-intrusive EV ch
   │   ├── 661.pkl
   │   └── 661_session.pkl
   └── utils.py
-
+ ```
 ## License
 
   MIT License.
