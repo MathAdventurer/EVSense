@@ -36,7 +36,7 @@ The repository of EVSense: a robust and scalable approach to non-intrusive EV ch
   Using `git clone` command in your terminal.
   
   
-## Project file structure
+## Project File Structure
 ```bash
   EVSense/
   ├── LICENSE
