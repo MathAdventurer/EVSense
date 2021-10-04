@@ -9,6 +9,23 @@ import torch
 from sklearn.metrics import accuracy_score, recall_score, precision_score, f1_score
 import copy
 import matplotlib.pyplot as plt
+import random
+
+def set_seed(seed=0):
+    """
+    The function is used to set the random seed for the neural network.
+    Please noted that the default seed is 0.
+    You can use this function when initialization some neural network.
+    """
+
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+
 # fix random state
 def setup_seed(seed):
     torch.manual_seed(seed)
