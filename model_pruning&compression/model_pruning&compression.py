@@ -23,6 +23,9 @@ import torch.optim as optim
 import torch.nn.utils.prune as prune
 torch.set_default_tensor_type('torch.FloatTensor')
 
+import sys 
+sys.path.append("..") 
+
 ##Self Implement package
 from ..data_processing import TimeseriesDataset, get_resident_dt, data_scalar, train_test_data_split 
 from ..utils import * 

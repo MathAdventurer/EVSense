@@ -12,7 +12,9 @@ from hmmlearn.hmm import GaussianHMM
 from collections import OrderedDict
 from copy import deepcopy
 import itertools
-import pickle 
+import pickle
+import sys 
+sys.path.append("..")  
 from ..utils import calculate_metrics
 import numpy as np 
 
