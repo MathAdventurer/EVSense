@@ -8,7 +8,9 @@ import torch.nn.functional as F
 import os
 import numpy as np
 import random
-from loss import CORAL
+import sys
+sys.path.append(".") 
+from .loss import CORAL
 
 # hidden_layer_dropout = 0.2 # we can change the dropout rate
 
