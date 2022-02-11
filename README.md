@@ -24,7 +24,7 @@ The repository of EVSense: A Robust and Scalable Approach to Non-Intrusive EV Ch
 
 ## Requirements
 
-  - Python 3.5+
+  - Python 3.5+ (pickle data protocol is 5, you can install the pakage "pickle5" to read it if your python version < 3.8)
   - Pytorch 1.4+ (Pytorch 1.8 was used on Raspberry Pi 4B. You can refer to [this link](https://sites.google.com/view/steam-for-vision/raspberry-pi) to compile the Pytorch, torchvision version on Raspberry Pi.)
   - *hmmlearn* package for the learning-based (FHMM) benchmark.
   - MATLAB code (with version after 2009) for the rule-based benchmark. Refer to [this link](https://www.mathworks.com/matlabcentral/fileexchange/47474-energy-disaggregation-algorithm-for-electric-vehicle-charging-load).
