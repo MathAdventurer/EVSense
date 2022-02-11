@@ -1,6 +1,6 @@
 # EVSense
 
-The repository of EVSense: a robust and scalable approach to non-intrusive EV charging detection.
+The repository of EVSense: A Robust and Scalable Approach to Non-Intrusive EV Charging Detection
 
 
 ## What is EVSense
