@@ -93,4 +93,4 @@ The repository of EVSense: A Robust and Scalable Approach to Non-Intrusive EV Ch
 ---
 
 #### Contact: 
-- xudongwang@link.cuhk.edu.cn
+- 220041020@link.cuhk.edu.cn
