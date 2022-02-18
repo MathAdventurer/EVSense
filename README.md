@@ -6,6 +6,8 @@ The repository of EVSense: A Robust and Scalable Approach to Non-Intrusive EV Ch
 ## What is EVSense
 
  A DNN model designed for household EV charging detection only using the aggregated load curve, namely *non-intrusive EV charging detection*.
+
+![ ](https://github.com/MathAdventurer/EVSense/blob/main/image/EVSense_model.png)
 ## What does this project contain
 
   - EVSense, a DNN model implemented in Pytorch, Python3
