@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
-# author: Wang,Xudong 220041020 SDS time:2021/6/16
+# time:2021/6/16
 
 # Start this file in 20210615
 # Update in 20210618, adjust the figure size.

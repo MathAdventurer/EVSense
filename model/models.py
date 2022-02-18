@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
-# author: Wang,Xudong 220041020 SDS time:2021/5/29
+# time:2021/5/29
 
 import torch
 import torch.nn as nn
