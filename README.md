@@ -92,5 +92,4 @@ The repository of EVSense: A Robust and Scalable Approach to Non-Intrusive EV Ch
 ---
 
 #### Contact: 
-- Xudong Wang (xudongwang@link.cuhk.edu.cn)
-- Guoming Tang (tangguo1999@gmail.com)
+- xudongwang@link.cuhk.edu.cn
