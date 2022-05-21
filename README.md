@@ -12,7 +12,7 @@ The repository of EVSense: A Robust and Scalable Approach to Non-Intrusive EV Ch
 **Structure:**
 - 1D-Conv Layers
 
-  - input length = 20:
+      - input length = 20:
   
         (conv1): in_channels=1,  out_channels=30, kernel_size=3, stride=1
     
@@ -24,7 +24,7 @@ The repository of EVSense: A Robust and Scalable Approach to Non-Intrusive EV Ch
     
         (conv5): in_channels=50, out_channels=50, kernel_size=5, stride=1
   
-  - input length = 10:
+      - input length = 10:
   
         (conv1): in_channels=1,  out_channels=30, kernel_size=2, stride=1
     
