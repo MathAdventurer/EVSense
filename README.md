@@ -9,7 +9,7 @@ The repository of EVSense: A Robust and Scalable Approach to Non-Intrusive EV Ch
 
 ![ ](https://github.com/MathAdventurer/EVSense/blob/main/image/EVSense_model.png)
 
-**Structure**
+**Structure:**
 - 1D-Conv Layers
 
   - input length = 20:
@@ -38,13 +38,13 @@ The repository of EVSense: A Robust and Scalable Approach to Non-Intrusive EV Ch
 
 - Bi-LSTM Layers:
   
-    input_size=50, hidden_size=50, num_layers=2
+        input_size=50, hidden_size=50, num_layers=2
   
 - Fully connection layers:
   
-    (fc1): in_features=100, out_features=1024
+        (fc1): in_features=100, out_features=1024
   
-    (fc2): in_features=1024, out_features=1
+        (fc2): in_features=1024, out_features=1
 
 ## What does this project contain
 
