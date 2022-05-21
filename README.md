@@ -9,20 +9,30 @@ The repository of EVSense: A Robust and Scalable Approach to Non-Intrusive EV Ch
 
 ![ ](https://github.com/MathAdventurer/EVSense/blob/main/image/EVSense_model.png)
 
-- 1D-Conv Layers for input length = 20:
+- 1D-Conv Layers
+
+  - input length = 20:
   
     (conv1): in_channels=1,  out_channels=30, kernel_size=3, stride=1
+    
     (conv2): in_channels=30, out_channels=30, kernel_size=5, stride=1
+    
     (conv3): in_channels=30, out_channels=40, kernel_size=6, stride=1
+    
     (conv4): in_channels=40, out_channels=50, kernel_size=5, stride=1
+    
     (conv5): in_channels=50, out_channels=50, kernel_size=5, stride=1
   
-- 1D-Conv Layers for input length = 10:
+  - input length = 10:
   
     (conv1): in_channels=1,  out_channels=30, kernel_size=2, stride=1
+    
     (conv2): in_channels=30, out_channels=30, kernel_size=3, stride=1
+    
     (conv3): in_channels=30, out_channels=40, kernel_size=3, stride=1
+    
     (conv4): in_channels=40, out_channels=50, kernel_size=4, stride=1
+    
     (conv5): in_channels=50, out_channels=50, kernel_size=2, stride=1
 
 - Bi-LSTM Layers:
