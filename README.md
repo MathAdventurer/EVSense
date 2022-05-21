@@ -37,13 +37,13 @@ The repository of EVSense: A Robust and Scalable Approach to Non-Intrusive EV Ch
         (conv5): in_channels=50, out_channels=50, kernel_size=2, stride=1
 
 - Bi-LSTM Layers:
-  
+
         input_size=50, hidden_size=50, num_layers=2
   
 - Fully connection layers:
-  
+
         (fc1): in_features=100, out_features=1024
-  
+        
         (fc2): in_features=1024, out_features=1
 
 ## What does this project contain
