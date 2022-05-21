@@ -8,6 +8,33 @@ The repository of EVSense: A Robust and Scalable Approach to Non-Intrusive EV Ch
  A DNN model designed for household EV charging detection only using the aggregated load curve, namely *non-intrusive EV charging detection*.
 
 ![ ](https://github.com/MathAdventurer/EVSense/blob/main/image/EVSense_model.png)
+
+- 1D-Conv Layers for input length = 20:
+  
+    (conv1): in_channels=1,  out_channels=30, kernel_size=3, stride=1
+    (conv2): in_channels=30, out_channels=30, kernel_size=5, stride=1
+    (conv3): in_channels=30, out_channels=40, kernel_size=6, stride=1
+    (conv4): in_channels=40, out_channels=50, kernel_size=5, stride=1
+    (conv5): in_channels=50, out_channels=50, kernel_size=5, stride=1
+  
+- 1D-Conv Layers for input length = 10:
+  
+    (conv1): in_channels=1,  out_channels=30, kernel_size=2, stride=1
+    (conv2): in_channels=30, out_channels=30, kernel_size=3, stride=1
+    (conv3): in_channels=30, out_channels=40, kernel_size=3, stride=1
+    (conv4): in_channels=40, out_channels=50, kernel_size=4, stride=1
+    (conv5): in_channels=50, out_channels=50, kernel_size=2, stride=1
+
+- Bi-LSTM Layers:
+  
+    input_size=50, hidden_size=50, num_layers=2
+  
+- Fully connection layers:
+  
+    (fc1): in_features=100, out_features=1024
+  
+    (fc2): in_features=1024, out_features=1
+
 ## What does this project contain
 
   - EVSense, a DNN model implemented in Pytorch, Python3
@@ -50,7 +77,8 @@ The repository of EVSense: A Robust and Scalable Approach to Non-Intrusive EV Ch
   ├── datasets
   │   ├── austin
   │   ├── california
-  │   └── newyork
+  │   ├── newyork
+  │   └── synthesis_data 
   │   ├── metadata
   │   │   ├── California_EV_real_exist_data_info.csv
   │   │   ├── California_NoEV_real_exist_data_info.csv
@@ -67,18 +95,19 @@ The repository of EVSense: A Robust and Scalable Approach to Non-Intrusive EV Ch
   │   ├── loss.py
   │   ├── metrics.py
   │   └── models.py
-  ├── model_pruning&compression
+  ├── model_pruning_compression
   │   ├── Edge_Running
   │   │   ├── Edge_Running&Test.py
   │   │   ├── test_data_.pkl
   │   │   └── test_label_.pkl
-  │   └── model_pruning&compression.py
+  │   └── model_pruning_compression.py
   ├── model_transfer
-  │   ├── transfer_from_661.py
-  │   └── transfer_sampling_rate.py
+  │   ├── transfer_model.py
+  │   ├── transfer_sampling_rate.py
+  │   └── federated_model.py
   ├── experiment.py
   ├── experiment_record
-  ├── global-state_from661.pth
+  ├── global-state.pth
   ├── pickle_data
   │   ├── 3000.pkl
   │   ├── 3000_session.pkl
@@ -92,5 +121,6 @@ The repository of EVSense: A Robust and Scalable Approach to Non-Intrusive EV Ch
 
 ---
 
-#### Contact: 
-- 220041020@link.cuhk.edu.cn
+#### Contact:
+- Xudong Wang (xudongwang@link.cuhk.edu.cn)
+- Guoming Tang (tangguo1999@gmail.com)

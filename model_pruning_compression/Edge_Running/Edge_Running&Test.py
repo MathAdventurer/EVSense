@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
+# EVSense: Xudong Wang, Guoming Tang
 # time:2021/7/11
 
 import os 
@@ -13,7 +14,7 @@ from torch.nn.utils import prune
 torch.set_default_tensor_type(torch.FloatTensor)
 np.random.seed(0)
 torch.manual_seed(0)
-import pickle5 as pickle
+import pickle # import pickle5 as pickle, if python version <= 3.6, install pickle5
 from sklearn.metrics import accuracy_score, recall_score, precision_score,f1_score
 
 print(os.getcwd())
@@ -155,6 +156,6 @@ with open('./test_data_.pkl','rb') as f:
 with open('./test_label_.pkl','rb') as f:
     test_label_ = pickle.load(f)
 
-model = torch.load('../../global-state_from661.pth',map_location=torch.device('cpu'))
+model = torch.load('../../global-state.pth',map_location=torch.device('cpu'))
 outcome = test_prune_model(model,test_data_,test_label_)
 

@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+# EVSense: Xudong Wang, Guoming Tang
+
 import os
 import numpy as np
 import datetime

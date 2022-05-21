@@ -1,7 +1,6 @@
-#!/usr/bin/env python
-# coding: utf-8
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
+# EVSense: Xudong Wang, Guoming Tang
 # time:2021/5/29
 
 # In[ ]:
@@ -30,7 +29,7 @@ sys.path.append("..")
 from ..data_processing import TimeseriesDataset, get_resident_dt, data_scalar, train_test_data_split 
 from ..utils import * 
 from ..session_analysis import *
-from ..model.models import EV_detect_net, EV_detect_net_1, EV_detect_seq2point, EV_detect_seq2point_BiLSTM, EV_detect_seq2point_BiLSTM_LN,EVsense_dummy_network,EVsense_DNN
+from ..model.models import EVsense_dummy_network,EVsense_DNN
 from ..experiment import experiment, experiment_lr
 from ..model.metrics import *   
 from ..model.loss import * 
@@ -51,7 +50,7 @@ with open('../pickle_data/661.pkl', 'rb') as f:
 # In[ ]:
 
 
-model = torch.load('../global-state_from661.pth',map_location=torch.device('cpu'))
+model = torch.load('../global-state.pth',map_location=torch.device('cpu'))
 print(model)
 
 

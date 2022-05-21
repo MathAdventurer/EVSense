@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
+# EVSense: Xudong Wang, Guoming Tang
 # time:2021/5/29
 
 import os
@@ -365,3 +366,57 @@ def train_test_data_split(data, time_period, ratio=None):
 
             return train_data, test_data
 
+
+def Synthesis_data(resident_, EV_sessions, start, end, option=[3, [2880, 5760], 5]):
+    """
+    resident_: DataFrame with index is datatime format, with column: 'aggregate', 'car1', 'label', no charging events
+    EV_sessions: EV charging profile from Pecanstreet, dictionary, with key is from 1 to 6 corresponding to residents.
+    start: string format, eg: '2014-05-01'
+    end: string format, eg: '2014-07-31'
+    option: list [interval to calculate the roughly embedding events,
+    [between two charging events min, between two charging events max],
+    compensation events number to ensure inserts until the end]
+    """
+    interval_cal = option[0]
+    interval_in_session = option[1]
+    resident_df = resident_.copy(deep=True)[start:end]
+    series_len = len(resident_df)
+    curent_index = 0
+    compensation = option[2]
+    ####
+    d_1 = np.random.randint(1, 7)
+    print('Select EV domain:', d_1)
+    session_num = int(np.ceil(series_len / (60 * 24 * interval_cal)) + compensation)
+    session_id = list(np.random.choice(a=range(len(EV_sessions[d_1])), size=session_num, replace=False, p=None))
+    session_len = [len(EV_sessions[d_1].iloc[id_]) for id_ in session_id]
+    start_point = int(np.random.choice(range(720, 1440), 1))
+    curent_index += start_point
+    print('session_id: ', session_id)
+    print('session_len: ', session_len)
+    print('start insert: ', curent_index)
+    for i in range(session_num):
+        if int(curent_index + session_len[i]) <= int(series_len - 1):
+            resident_df['car1'].iloc[int(curent_index):int(curent_index + session_len[i]), ] = EV_sessions[d_1].iloc[
+                session_id[i]].values
+            resident_df['label'].iloc[int(curent_index):int(curent_index + session_len[i]), ] = 1.0
+            curent_index = int(curent_index + session_len[i])
+
+            interval_ = int(np.random.choice(range(interval_in_session[0], interval_in_session[1]), 1))
+
+            print(f'finish insert {session_id[i]}, next interval is {interval_}')
+
+            resident_df['label'].plot(figsize=(20, 3))
+            plt.show()
+            resident_df['car1'].plot(figsize=(20, 3))
+            plt.show()
+            if int(curent_index + interval_) > int(series_len - 1) and i != session_num - 1:
+                print('Stop fill done!')
+                break
+            else:
+                curent_index = int(curent_index + interval_)
+                print('continue insert: ', curent_index)
+        else:
+            break
+    # generate the aggregate power with the inserted EV charging profile.
+    resident_df['aggregate'] = resident_df['aggregate'] + resident_df['car1']
+    return resident_df

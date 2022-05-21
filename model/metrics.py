@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
-# SDS time:2021/5/29
+# EVSense: Xudong Wang, Guoming Tang
+# time:2021/5/29
 
 import numpy as np
 import torch

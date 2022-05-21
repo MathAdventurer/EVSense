@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
+# EVSense: Xudong Wang, Guoming Tang
 # time:2021/5/29
 
-# Loss 函数
 
 import numpy as np
 import torch
@@ -108,8 +108,8 @@ class BCEFocalLoss(torch.nn.Module):
         self.reduction = reduction
 
     def forward(self, predict, target):
-        pt = torch.sigmoid(predict) # sigmoid获取概率
-        #在原始ce上增加动态权重因子，注意alpha的写法，下面多类时不能这样使用
+        pt = torch.sigmoid(predict) # sigmoid get the prob
+        # CE loss + weight, only use for binary case
         loss = - self.alpha * (1 - pt) ** self.gamma * target * torch.log(pt) - (1 - self.alpha) * pt ** self.gamma * (1 - target) * torch.log(1 - pt)
 
         if self.reduction == 'mean':

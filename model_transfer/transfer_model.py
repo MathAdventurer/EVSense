@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
+# EVSense: Xudong Wang, Guoming Tang
 # time:2021/7/15
 
 
@@ -22,11 +23,11 @@ sys.path.append("..")
 from ..data_processing import TimeseriesDataset, get_resident_dt, data_scalar, train_test_data_split 
 from ..utils import * 
 from ..session_analysis import *
-from ..model.models import EV_detect_net, EV_detect_net_1, EV_detect_seq2point, EV_detect_seq2point_BiLSTM, EV_detect_seq2point_BiLSTM_LN,EVsense_dummy_network,EVsense_DNN
+from ..model.models import EVsense_dummy_network,EVsense_DNN,EVSense_transferable
 from ..experiment import experiment, experiment_lr, transfer_learning
 from ..model.metrics import *   
 from ..model.loss import * 
-from ..model_pruning&compression.model_pruning&compression import prune_net
+from ..model_pruning_compression.model_pruning_compression import prune_net, get_transfer_model
 
 ## Set pandas dataFrame to show all the columns 
 pd.set_option('display.max_columns', None)
@@ -34,16 +35,28 @@ pd.set_option('display.max_columns', None)
 ## Fix random state
 setup_seed(0)  
 
-with open('../pickle_data/3000.pkl','rb') as f:
-       dt_3000_1min = pickle.load(f) 
 
+# Load data
+## Source domain data (Here using 2 week data from resident 661)
+with open('../pickle_data/661.pkl','rb') as f:
+    dt_661_1min = pickle.load(f)
 
-time_split_3000 = {'train':{'start':'2018-05-01','end':'2018-06-30'},
-              'test':{'start':'2018-07-01','end':'2018-07-31'}}
-agg_p_train_3000, label_train_3000, agg_p_test_3000, label_test_3000 = train_test_data_split(dt_3000_1min,time_split_3000)
+time_split_661 = {'train':{'start':'2018-05-01','end':'2018-05-15'},
+              'test':{'start':'2018-05-16','end':'2018-07-31'}}
+agg_p_train_661, label_train_661, agg_p_test_661, label_test_661 = train_test_data_split(dt_661_1min,time_split_661)
 
+train_dataset_661 = TimeseriesDataset(agg_p_train_661,label_train_661,seq_len= 20)
+train_gen_661 = torch.utils.data.DataLoader(train_dataset_661, batch_size = 128, shuffle = False)
 
- ## Load data for Pytorch
+## Target domain data
+with open('../pickle_data/3000.pkl', 'rb') as f:
+    dt_3000_1min = pickle.load(f)
+
+time_split_3000 = {'train': {'start': '2018-05-01', 'end': '2018-06-30'},
+                   'test': {'start': '2018-07-01', 'end': '2018-07-31'}}
+agg_p_train_3000, label_train_3000, agg_p_test_3000, label_test_3000 = train_test_data_split(dt_3000_1min,
+                                                                                             time_split_3000)
+
 train_dataset_3000 = TimeseriesDataset(agg_p_train_3000,label_train_3000,seq_len= 20)
 train_gen_3000 = torch.utils.data.DataLoader(train_dataset_3000, batch_size = 128, shuffle = False)
 test_dataset_3000 = TimeseriesDataset(agg_p_test_3000,label_test_3000,seq_len=20)
@@ -53,8 +66,9 @@ test_gen_3000 = torch.utils.data.DataLoader(test_dataset_3000, batch_size = 128,
 ## Model transfer (supervised with target domain data)
 ########################################################################################################
 
-trans_f_model = torch.load('../global-state_from661.pth')
-trans_f_model = get_transfer_model(trans_f_model,reparam=False,cuda=True,verbose=False)
+trans_f_model = torch.load('../global-state.pth') # Here the model can from other resident or global state.
+
+trans_f_model = get_transfer_model(trans_f_model,reparam=False,cuda=True,verbose=False) # reparam is optional for fully connect layers
 
 predict_new_output(trans_f_model,test_gen=test_gen_3000, seq_len = 20, ofilter=None ,cuda = True)
 
@@ -78,14 +92,14 @@ train_record_3000_trans_f, train_pred_record_dict_3000_trans_f, test_record_3000
 find_the_best(train_record_3000_trans_f,test_record_3000_trans_f,epoch_num=200,resident_id=3000)
 
 
-summer_3000_outcome_trans_f = visuliaztion_summary_prediction(epoch_num=194,
+summer_3000_outcome_trans_f = visuliaztion_summary_prediction(epoch_num=200,
                                     agg_p_train = agg_p_train_3000,
                                     agg_p_test = agg_p_test_3000,
                                     label_train = label_train_3000,
                                     label_test = label_test_3000,
                                     train_prediction = train_record_3000_trans_f,
                                     test_prediction = test_record_3000_trans_f,
-                                    resident_id = 1642,
+                                    resident_id = 3000,
                                     seq_len = 20,
                                     train_s_t = None,
                                     test_s_t = None,
@@ -98,7 +112,9 @@ summer_3000_outcome_trans_f = visuliaztion_summary_prediction(epoch_num=194,
 ## model transfer (Un-supervised transfer for target domain data, need a part of labeled source domain data.)
 ########################################################################################################
 
-trans_f_model = torch.load('../global-state_from661.pth')
+trans_f_model = EVSense_transferable(sequence_length=20,cuda=True,hidden_layer_dropout=0.2)
+trans_f_model.load_state_dict(torch.load('../global-state.pth'))
+# <All keys matched successfully> See this information output
 trans_f_model = get_transfer_model(trans_f_model,reparam=False,cuda=True,verbose=False)
 
 predict_new_output(trans_f_model,test_gen=test_gen_3000, seq_len = 20, ofilter=None ,cuda = True)
@@ -121,14 +137,14 @@ train_record_3000_trans_f, train_pred_record_dict_3000_trans_f, test_record_3000
 find_the_best(train_record_3000_trans_f,test_record_3000_trans_f,epoch_num=200,resident_id=3000)
 
 
-summer_3000_outcome_trans_f = visuliaztion_summary_prediction(epoch_num=194,
+summer_3000_outcome_trans_f = visuliaztion_summary_prediction(epoch_num=200,
                                     agg_p_train = agg_p_train_3000,
                                     agg_p_test = agg_p_test_3000,
                                     label_train = label_train_3000,
                                     label_test = label_test_3000,
                                     train_prediction = train_record_3000_trans_f,
                                     test_prediction = test_record_3000_trans_f,
-                                    resident_id = 1642,
+                                    resident_id = 3000,
                                     seq_len = 20,
                                     train_s_t = None,
                                     test_s_t = None,
