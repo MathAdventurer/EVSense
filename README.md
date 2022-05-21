@@ -9,31 +9,32 @@ The repository of EVSense: A Robust and Scalable Approach to Non-Intrusive EV Ch
 
 ![ ](https://github.com/MathAdventurer/EVSense/blob/main/image/EVSense_model.png)
 
+**Structure**
 - 1D-Conv Layers
 
   - input length = 20:
   
-    (conv1): in_channels=1,  out_channels=30, kernel_size=3, stride=1
+        (conv1): in_channels=1,  out_channels=30, kernel_size=3, stride=1
     
-    (conv2): in_channels=30, out_channels=30, kernel_size=5, stride=1
+        (conv2): in_channels=30, out_channels=30, kernel_size=5, stride=1
     
-    (conv3): in_channels=30, out_channels=40, kernel_size=6, stride=1
+        (conv3): in_channels=30, out_channels=40, kernel_size=6, stride=1
     
-    (conv4): in_channels=40, out_channels=50, kernel_size=5, stride=1
+        (conv4): in_channels=40, out_channels=50, kernel_size=5, stride=1
     
-    (conv5): in_channels=50, out_channels=50, kernel_size=5, stride=1
+        (conv5): in_channels=50, out_channels=50, kernel_size=5, stride=1
   
   - input length = 10:
   
-    (conv1): in_channels=1,  out_channels=30, kernel_size=2, stride=1
+        (conv1): in_channels=1,  out_channels=30, kernel_size=2, stride=1
     
-    (conv2): in_channels=30, out_channels=30, kernel_size=3, stride=1
+        (conv2): in_channels=30, out_channels=30, kernel_size=3, stride=1
     
-    (conv3): in_channels=30, out_channels=40, kernel_size=3, stride=1
+        (conv3): in_channels=30, out_channels=40, kernel_size=3, stride=1
     
-    (conv4): in_channels=40, out_channels=50, kernel_size=4, stride=1
+        (conv4): in_channels=40, out_channels=50, kernel_size=4, stride=1
     
-    (conv5): in_channels=50, out_channels=50, kernel_size=2, stride=1
+        (conv5): in_channels=50, out_channels=50, kernel_size=2, stride=1
 
 - Bi-LSTM Layers:
   
@@ -56,7 +57,7 @@ The repository of EVSense: A Robust and Scalable Approach to Non-Intrusive EV Ch
 
 ## Datasets
 
- Since the Pecan Street datasets are not open source, due to the term of usage, this Github repository provides cleaned data of only two residents in pickle formula. You can buy or apply the Pecan Street datasets from [this link](https://www.pecanstreet.org/dataport/).
+ Since the Pecan Street datasets are not open source, due to the term of usage, this Github repository provides cleaned and partial data of only two residents in pickle formula. You can buy or apply the Pecan Street datasets from [this link](https://www.pecanstreet.org/dataport/).
  
  Once having right to access the Pecan Street Dataport, you can easily download the dataset. This Github project also provides a complete solution to various data manipulations, including data query from SQLlite3 file, data cleaning and saving, and so on.
 
