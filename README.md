@@ -1,7 +1,20 @@
 # EVSense
 
-The repository of EVSense: A Robust and Scalable Approach to Non-Intrusive EV Charging Detection
+The repository of EVSense: A Robust and Scalable Approach to Non-Intrusive EV Charging Detection.
 
+## Citation
+
+If you find this work useful, please cite our paper:
+
+```bibtex
+@inproceedings{wang2022evsense,
+  title={Evsense: A robust and scalable approach to non-intrusive ev charging detection},
+  author={Wang, Xudong and Tang, Guoming and Wang, Yi and Keshav, Srinivasan and Zhang, Yu},
+  booktitle={Proceedings of the Thirteenth ACM International Conference on Future Energy Systems},
+  pages={307--319},
+  year={2022}
+}
+```
 
 ## What is EVSense
 
