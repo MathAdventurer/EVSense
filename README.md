@@ -1,8 +1,6 @@
 # EVSense
 
-The repository of EVSense: A Robust and Scalable Approach to Non-Intrusive EV Charging Detection.
-
-## Citation
+The repository of ACM e-Enery 2022 Paper: EVSense: A Robust and Scalable Approach to Non-Intrusive EV Charging Detection.
 
 If you find this work useful, please cite our paper:
 
